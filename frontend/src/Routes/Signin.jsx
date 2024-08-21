@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './SignIn.css';  // Ensure this path is correct
+import toast from 'react-hot-toast';
 
 const SignIn = () => {
   const [username, setUsername] = useState('');
@@ -15,8 +16,15 @@ const SignIn = () => {
       await axios.post('http://localhost:8000/api/auth/signin', { username, password }, { withCredentials: true });
       navigate('/');
     } catch (err) {
-      setError('Sign-in failed. Please check your credentials and try again.');
-      console.error(err);
+      console.log(err.response)
+      if (err.response?.status === 404) {
+        toast.error("User not found. Redirecting you to Signup page...");
+        navigate('/signup');
+      } else if (err.response?.status === 400) {
+        toast.error("Wrong credentials. Please try again.");
+      } else {
+        toast.error(err.response?.data?.message || "An error occurred");
+      }
     }
   };
 

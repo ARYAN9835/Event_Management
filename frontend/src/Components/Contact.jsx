@@ -27,17 +27,23 @@ const Contact = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-  
+   
       // Access response data using res.data
       toast.success(response.data.message);
       setName("");
       setEmail("");
       setMessage("");
       setSubject("");
-    } catch (error) {
-      Navigate("./signin")
-      toast.error(error.response?.data?.message || "An error occurred");
-      console.error(error);
+    } catch (error) { 
+      //Navigate("./signin")
+      if(error.response?.status === 401) {
+        toast.error("Unauthorized. redirecting to Signin...");
+        Navigate("./signin");
+      }
+      else {
+        toast.error(error.response?.data?.message || "An error occurred");
+        console.error(error.message); 
+      }
     }
   };
   

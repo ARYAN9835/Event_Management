@@ -10,7 +10,7 @@
   display: none;
 }
 body {
-  background: #e7edcc;
+  background: #f5f5f5; /* Light gray background */
 }
 .container {
   min-width: 1500px;
@@ -37,7 +37,7 @@ nav {
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
   margin: 0 auto;
-  background-color: #dcd8a1;
+  background-color: #0d0321; /* Dark olive green */
 }
 nav::after {
   content: ""; 
@@ -53,6 +53,7 @@ nav .logo {
   display: flex;
   align-items: center;
   font-size: 2rem;
+  color: #f0e68c; /* Khaki color for the logo */
 }
 nav .navLinks {
   flex: 2;
@@ -71,10 +72,12 @@ nav .navLinks .links a {
   font-weight: 300;
   letter-spacing: 1.4px;
   font-size: 24px;
+  color: #f0e68c; /* Khaki color for the links */
 }
 nav .navLinks .links a:hover {
   transition: 0.3s;
   cursor: pointer;
+  color: #ffd700; /* Gold color on hover */
 }
 nav .hamburger {
   display: none;
@@ -107,7 +110,7 @@ nav svg {
     display: flex;
     flex-direction: column;
     top: -100%;
-    background: #a2783a;
+    background: #6b8e23; /* Olive drab for mobile menu */
     width: 100%;
     left: 0;
     padding: 15px 7.5px;
@@ -119,7 +122,7 @@ nav svg {
     display: flex;
     flex-direction: column;
     top: 67px;
-    background: #0c0c0c;
+    background: #2f4f4f; /* Dark slate gray */
     left: 0;
     padding: 15px 7.5px;
     transition: 0.3s;
@@ -176,7 +179,7 @@ nav svg {
 }
 .hero .item h3 {
   font-family: "Alex Brush", cursive;
-  color: #a2783a;
+  color: #6b8e23; /* Olive drab */
   font-weight: 300;
   font-size: 28px;
 }
@@ -189,6 +192,7 @@ nav svg {
   font-size: 36px;
   font-weight: 300;
   letter-spacing: 4px;
+  color: #556b2f; /* Dark olive green */
 }
 .hero .item div p {
   color: gray;
@@ -197,7 +201,7 @@ nav svg {
 .hero .item div a {
   padding: 10px 30px;
   color: #fff;
-  background: #000;
+  background: #556b2f; /* Dark olive green */
   width: fit-content;
   cursor: default;
 }
@@ -210,91 +214,133 @@ nav svg {
   }
 }
 
+/* Main contact section styling */
 .contact {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 50px;
 }
+
 .contact.container {
   margin-top: 0px;
 }
 
+/* Banner container within the contact section */
 .contact .banner {
   display: flex;
   gap: 30px;
 }
+
+/* Individual banner items styling */
 .contact .banner .item {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
-  border: 1px solid #a2783a;
+  border: 1px solid #6b8e23; /* Olive drab border */
   padding: 15px 0;
   border-radius: 7px;
+  background-color: #ffffff; /* White background */
 }
+
+/* Banner item headings */
 .contact .banner .item h4 {
   font-weight: 300;
   font-family: "Alex Brush", cursive;
   font-size: 2rem;
+  color: #556b2f; /* Dark olive green text color */
 }
+
+/* Banner item paragraphs */
 .contact .banner .item p {
   color: gray;
 }
+
+/* Styling for the last banner item, usually the form */
 .contact .banner:last-child .item {
   border: none;
 }
+
+/* Form inside the last banner item */
 .contact .banner:last-child .item form {
   width: 100%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #ffffff; /* White background */
 }
+
+/* Form field containers */
 .contact .banner:last-child .item form div {
   display: flex;
   gap: 20px;
 }
+
+/* Form input fields */
 .contact .banner:last-child .item form div input {
   flex: 1;
+  background: transparent;
+  border: 1px solid #556b2f; /* Dark olive green border */
+  border-radius: 7px;
+  padding: 8px;
 }
+
+/* Form heading */
 .contact .banner:last-child .item form h2 {
   font-size: 32px;
   font-weight: 300;
   letter-spacing: 3px;
+  color: #556b2f; /* Dark olive green text color */
 }
+
+/* Form inputs and textarea fields */
 .contact .banner:last-child .item form input,
 .contact .banner:last-child .item form textarea {
   padding: 8px;
   background: transparent;
-  border: 1px solid #a2783a;
+  border: 1px solid #6b8e23; /* Olive drab border */
   border-radius: 7px;
 }
+
+/* Form submit button */
 .contact .banner:last-child .item form button {
   padding: 10px 60px;
   font-size: 24px;
-  color: #fff;
-  background: #a2783a;
+  color: #ffffff; /* White text color */
+  background-color: #6b8e23; /* Olive drab background */
   font-weight: 300;
   font-family: "Alex Brush", cursive;
   border: none;
   width: fit-content;
 }
+
+/* Focus state for input and textarea */
 .contact .banner:last-child .item form input:focus,
 .contact .banner:last-child .item form textarea:focus {
   outline: none;
 }
+
+/* Responsive design for screens smaller than 830px */
 @media (max-width: 830px) {
   .contact .banner {
-    flex-direction: column;
+    flex-direction: column; /* Stack banners vertically */
   }
-}
-@media (max-width: 640px) {
-  .contact .banner:last-child .item form {
-    padding: 0;
+  
+  .contact .banner .item form div {
+    flex-direction: column; /* Stack form fields vertically */
   }
-  .contact .banner:last-child .item form div {
-    flex-direction: column;
+  
+  .contact .banner:last-child .item form h2 {
+    font-size: 28px; /* Slightly smaller heading */
+  }
+  
+  .contact .banner:last-child .item form button {
+    padding: 10px 40px; /* Adjusted padding */
+    font-size: 20px; /* Slightly smaller button text */
   }
 }
 
@@ -411,7 +457,7 @@ footer .banner .tag div button {
 }
 .services .banner .item h3 {
   position: absolute;
-  background: #fff7ea;
+  background: #7995ac;
   width: 100%;
   height: 100%;
   display: flex;

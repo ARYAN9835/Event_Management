@@ -13,7 +13,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:8000/api/auth/signup', { username, email, password });
-      navigate('/signin');
+      navigate('/');
     } catch (err) {
       if (err.response) {
         // The server responded with a status other than 2xx
