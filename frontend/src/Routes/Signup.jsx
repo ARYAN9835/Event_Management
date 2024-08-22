@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.css';  // Ensure this path matches where you save your CSS file
 
 const SignUp = () => {
@@ -13,7 +13,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:8000/api/auth/signup', { username, email, password });
-      navigate('/');
+      navigate('/signin');
     } catch (err) {
       if (err.response) {
         // The server responded with a status other than 2xx
@@ -60,6 +60,9 @@ const SignUp = () => {
           />
           <button type="submit">Sign Up</button>
         </form>
+        <p className='signin-link'>
+          Already have an account?<Link to = "/signin">SignIn</Link>
+        </p>
       </div>
     </div>
   );

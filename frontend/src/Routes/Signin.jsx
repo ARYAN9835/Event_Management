@@ -8,7 +8,7 @@ const SignIn = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -56,6 +56,6 @@ const SignIn = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default SignIn;

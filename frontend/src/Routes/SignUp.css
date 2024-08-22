@@ -61,3 +61,19 @@
 .signin-link a:hover {
   text-decoration: underline;
 }
+.signin-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signin-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.signin-link a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
